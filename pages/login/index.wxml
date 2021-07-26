@@ -1,0 +1,24 @@
+<!--pages/login/index.wxml-->
+<view class="main">
+	<image src="../../images/logo.png" style="width:240rpx;height:240rpx;margin-top:60rpx;margin-bottom:60rpx" mode='aspectFit'></image>
+	<text style="font-size:28rpx;color:#202020;line-height:28rpx;">抱抱氧-共享氧吧申请获得以下权限：</text>
+	<text style="font-size:28rpx;color:#202020;line-height:28rpx;margin-top:28rpx">获取您的昵称、头像、手机号</text>
+	<text style="font-size:28rpx;color:#7D7D7D;;margin-top:28rpx;margin-bottom:180rpx">授权登录后，才可安全绑定或购买氧疗袋等操作</text>
+	<view class="checkbox_view">
+		<image wx:if="{{!is_title}}" mode='aspectFit' catchtap="checkboxShow" src="../../images/login-Check-option.png" style="width:50rpx;height:50rpx"></image>
+		<image wx:if="{{is_title}}" mode='aspectFit' catchtap="checkboxShow" src="../../images/login-Check.png" style="width:50rpx;height:50rpx"></image>
+		<text style="margin-left:20rpx" catchtap="checkboxShow">点击授权代表已阅读并同意</text><text style="color:#0080FF" catchtap="go_agreement">《用户服务协议》</text>
+	</view>
+	<button wx:if="{{!hasUserInfo}}" bindtap="getUserProfile" class="button_go">
+		<text>微信一键</text>
+    <text style="margin-left:10rpx">快速登录</text>
+	</button>
+  <button open-type="getPhoneNumber" wx:if="{{hasUserInfo && !hasPhone && !ishasPhone}}" lang="zh_CN" bindgetphonenumber="getPhoneNumber" class="button_go">
+		<text>请再点击</text>
+		<text style="margin-left:10rpx">授权手机号</text>
+		<text style="margin-left:10rpx">快速登录</text>
+	</button>
+  <button wx:if="{{hasUserInfo && ishasPhone}}" catchtap="onPhoneUserInfo" class="button_go">
+		输入手机号登录/注册
+	</button>
+</view>

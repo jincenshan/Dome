@@ -1,0 +1,42 @@
+/* pages/binding/message.wxss */
+.main{
+  width: 750rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+.error_images{
+  width: 200rpx;
+  height: 200rpx;
+  display: flex;
+  margin-top: 140rpx;
+}
+.error_text{
+  display: flex;
+  font-size: 38rpx;
+  font-weight: bold;
+  line-height: 57rpx;
+}
+.error_phone{
+  display: flex;
+  font-size: 28rpx;
+  color: #7d7d7d;
+  line-height: 36rpx;
+  margin-top: 60rpx;
+}
+.error_home{
+  width: 630rpx;
+  height: 80rpx;
+  background: #ffffff;
+  border: 1px solid #d8d8e2;
+  border-radius: 40rpx;
+  font-size: 30rpx;
+  font-weight: bold;
+  line-height: 30rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 200rpx;
+}

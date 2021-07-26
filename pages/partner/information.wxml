@@ -1,0 +1,8 @@
+<!--pages/partner/information.wxml-->
+<view class="main">
+  <view class="content_view">
+    <form catchsubmit="formSubmit">
+      <view></view>
+    </form>
+  </view>
+</view>

@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText":"邀请有礼",
+  "usingComponents": {
+    "wxml-to-canvas": "wxml-to-canvas"
+  }
+}

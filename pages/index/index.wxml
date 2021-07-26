@@ -1,0 +1,71 @@
+<!--index.wxml-->
+<view class="main">
+	<!-- 地图 -->
+	<map id="map" subkey="{{key}}" longitude="{{longitudeOne}}" latitude="{{latitudeOne}}" scale="14" markers="{{markers}}" bindmarkertap="markertap" polyline="{{polyline}}" bindregionchange="regionchangeShow" catchtap="regionchange_one" show-location="true" layer-style="1" class="map_style" enable-traffic="true">
+	</map>
+	<!-- 上面订单 -->
+	<view class="top_map" wx:if="{{orderId}}" catchtap="go_detail">
+		<view class="top_map_view">
+			<image src="../../images/home-order.png" style="width:48rpx;height:48rpx;margin-left:30rpx;margin-right:15rpx"></image>
+			<text>您有一笔未支付订单！</text>
+		</view>
+		<image src="../../images/home-order-more.png" style="width:48rpx;height:48rpx;margin-right:30rpx"></image>
+	</view>
+	<!-- 提示 -->
+	<view class="top_message" wx:if="{{!orderId}}">
+		<text>请点击附近的氧疗机，扫码屏幕二维码</text>
+	</view>
+	<!-- 右侧按钮 -->
+	<view class="map_views"> 
+		<image class="map_view_images" src="../../images/home-button-search.png" mode='aspectFill' bindtap="searchShow"></image>
+		<image class="map_view_images" src="../../images/home-button-tel.png" mode='aspectFill' catchtap="callShow"></image>
+		<image class="map_view_images" src="../../images/home-button-dw.png" mode='aspectFill' catchtap="map_show"></image>
+		<image class="map_view_images" src="../../images/home-button-yqyl.png" mode='aspectFill' catchtap="invitation_show"></image>
+	</view>
+	<!-- 标点信息 -->
+	<view class="map_view" wx:if="{{map_view}}">
+		<view class="map_view_go">
+			<view class="map_view_text">
+				<text style="white-space: nowrap;overflow: hidden;text-overflow:ellipsis;">{{markers_position}}</text>
+				<view class="map_view_state">
+					<view class="map_view_state_top">
+						<text>{{markers_name}}</text>
+					</view>
+					<view class="map_view_state_top">
+						<text  catchtap="go_phone" data-tel="{{markers_phone}}">{{markers_phone}}</text>
+					</view>
+				</view>
+			</view>
+			<view class="map_right_images">
+				<text>{{markers_distance}}m</text>
+				<image src="../../images/nearlist-navigation.png" style="width:140rpx;height:68rpx;margin-top:20rpx" mode='aspectFill' catchtap="go_gaode"></image>
+			</view>
+		</view>
+		<view class="content_text" style="justify-content: flex-start;border-top:1rpx solid #EAEAEA;margin-top:20rpx;height:80rpx">
+			<image src="../../images/nearlist-warning03.png" style="width:30rpx;height:30rpx" wx:if='{{markers_status == "NORMAL"}}'></image>
+			<image src="../../images/nearlist-warning02.png" style="width:30rpx;height:30rpx" wx:if='{{markers_status == "ALARM"}}'></image>
+			<image src="../../images/nearlist-warning01.png" style="width:30rpx;height:30rpx" wx:if='{{markers_status == "OXYSUPPLY"}}'></image>
+			<text style="font-size:28rpx;line-height:28rpx;font-weight:bold;margin-left:20rpx;color:#00CC99;" wx:if='{{markers_status == "NORMAL"}}'>正常运行</text>
+			<text style="font-size:28rpx;line-height:28rpx;font-weight:bold;margin-left:20rpx;color:#FE384B;" wx:if='{{markers_status == "ALARM"}}'>暂停服务</text>
+			<text style="font-size:28rpx;line-height:28rpx;font-weight:bold;margin-left:20rpx;color:#FF773B;" wx:if='{{markers_status == "OXYSUPPLY"}}'>仅取氧（暂无氧疗袋）</text>
+		</view>
+	</view>
+	<!-- 扫一扫 -->
+	<view catchtap="go_title" id="1" class="button_go">
+		<image src="../../images/home-button-scan-pic.png" class="code_images" mode='aspectFill'></image>
+		扫一扫
+	</view>
+	<!-- 打电话界面 -->
+	<view class="call" wx:if="{{is_call}}">
+		<view class="call_view">
+			<image src="../../images/home-button-tel-popup.png" class="call_images"></image>
+			<text style="font-size:34rpx;line-height:34rpx;margin-top:120rpx;margin-bottom:60rpx">客服电话</text>
+			<text style="font-size:48rpx;line-height:48rpx;margin-bottom:60rpx;font-weight:bold">15343309234</text>
+			<text style="font-size:24rpx;line-height:24rpx;margin-bottom:80rpx;color:#7D7D7D">如对订单或产品使用有疑问，请联系客服</text>
+			<view class="call_bottom">
+				<view class="call_bottom_button" style="border:1rpx solid #e5e5e5" catchtap="callShowColse">取消</view>
+				<view class="call_bottom_button" style="background-color:#0080FF;color:white" catchtap="goPhone">立即呼叫</view>
+			</view>
+		</view>
+	</view>
+</view>

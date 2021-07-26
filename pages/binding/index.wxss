@@ -1,0 +1,77 @@
+/* pages/binding/index.wxss */
+.main{
+  width: 750rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+.hread_images{
+  width: 750rpx;
+  height: 446rpx;
+  display: flex;
+}
+.content{
+  width: 750rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+}
+.content_text{
+  width: 630rpx;
+  display: flex;
+  font-size: 28rpx;
+  line-height:42rpx;
+  color: white;
+  font-weight: bold;
+  margin-top: 100rpx;
+  margin-bottom: 100rpx;
+}
+.content_view{
+  width: 690rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  border-radius: 20rpx;
+}
+.content_view_list{
+  width: 630rpx;
+  height: 120rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  border-bottom: 1rpx solid #EAEAEA;
+}
+.content_view_icon{
+  width:200rpx;
+  height: 40rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.content_icon{
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 20rpx;
+}
+.button_buy{
+  width: 650rpx;
+  height: 90rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: 30rpx;
+  border-radius: 45rpx;
+  background-color: #0080ff;
+  color: white;
+  font-weight: bold;
+  line-height: 90rpx;
+  margin-top: 60rpx;
+}

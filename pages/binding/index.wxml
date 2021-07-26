@@ -1,0 +1,27 @@
+<!--pages/binding/index.wxml-->
+<view class="main">
+	<image src="../../images/oxygenbag-bd-bg.png" class="hread_images"></image>
+	<view class="content">
+		<text class="content_text">您于{{list_date.createDate}} 在{{list_date.netName}}{{list_date.equipName}}上购买了氧疗袋，还未绑定</text>
+		<view class="content_view">
+			<view class="content_view_list">
+				<text style="font-size:34rpx;line-height:34rpx;font-weight:bold">请绑定氧疗袋</text>
+			</view>
+			<view class="content_view_list">
+				<view class="content_view_icon">
+					<image src="../../images/order-details-wd.png" class="content_icon" mode='aspectFit'></image>
+					<text style="font-size:28rpx;line-height:28rpx;font-weight:blod;color:#7d7d7d;">网点名称</text>
+				</view>
+				<text style="font-size:28rpx;line-height:28rpx;font-weight:blod">{{list_date.netName}}</text>
+			</view>
+			<view class="content_view_list" style="border-bottom:none">
+				<view class="content_view_icon">
+					<image src="../../images/order-details-sn.png" class="content_icon" mode='aspectFit'></image>
+					<text style="font-size:28rpx;line-height:28rpx;font-weight:blod;color:#7d7d7d;">氧疗袋SN</text>
+				</view>
+				<text style="font-size:28rpx;line-height:28rpx;font-weight:blod">{{list_date.bagSn}}</text>
+			</view>
+		</view>
+    <view class="button_buy" catchtap="go_buy">确定绑定</view>
+	</view>
+</view>

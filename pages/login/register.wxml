@@ -1,0 +1,13 @@
+<!--pages/login/register.wxml-->
+<view class="main">
+	<image src="../../images/slpic.png" class="conent_images"></image>
+	<view class="conent_view">
+		<text style="margin-top:54rpx;margin-left:38rpx;font-size: 34rpx;line-height: 34rpx;font-weight: bold;">手机号验证登录</text>
+		<input style="margin-top:54rpx;margin-left:38rpx;font-size: 32rpx;" value="{{username}}" type="number" maxlength="11" placeholder="请输入手机号" placeholder-style="color:#7D7D7D;font-size: 32rpx;" bindinput="inputShow"></input>
+		<view class="input_view">
+			<input style="margin-left:38rpx;font-size: 30rpx;" placeholder="请输入验证码" value="{{validCode}}" type="number" bindinput="codeShow" maxlength="6" placeholder-style="color:#7D7D7D"></input>
+			<view class="code_view" catchtap="goCode">{{sendText}}</view>
+		</view>
+	</view>
+	<view class="button_view" catchtap="goLogin">立即登录</view>
+</view>

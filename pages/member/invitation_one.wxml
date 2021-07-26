@@ -1,0 +1,79 @@
+<!--pages/member/invitation.wxml-->
+<view class="main">
+	<image src="../../images/invita-bg-5.png" class="top_view_bg"></image>
+	<image src="../../images/invita-bg-4.png" class="top_view_bg_1"></image>
+	<view class="top_view">
+		<text style="font-size:36rpx;line-height:36rpx;font-weight:bold;margin-bottom:34rpx"><text style="color:#0080FF">{{user.name}}</text><text style="margin-left:10rpx;margin-right:10rpx">邀您</text><text>一路有氧</text></text>
+		<text style="margin-bottom:60rpx">全藏区<text style="margin-left:10rpx;margin-right:10rpx;color:#0080FF">306个</text>取氧点，随时补氧</text>
+		<text style="font-size:48rpx;line-height:48rpx;font-weight:bold;margin-bottom:30rpx;color:#FF3B3B">{{user.invitationCode}}</text>
+		<view style="font-size:28rpx;line-height:28rpx;font-weight:bold;color:#0080FF;text-decoration:underline;margin-bottom:68rpx" catchtap="goCopy">复制邀请码</view>
+		<text style="font-size:30rpx;line-height:30rpx;font-weight:bold;margin-bottom:16rpx;">注册时，请输入以上邀请码</text>
+		<text style="font-size:30rpx;line-height:30rpx;font-weight:bold;margin-bottom:40rpx;">您和<text style="margin-left:10rpx;margin-right:10rpx;color:#0080FF">{{user.name}}</text>将会获得免费取氧次数</text>
+		<view style="font-size:28rpx;line-height:28rpx;font-weight:bold;color:#0080FF;text-decoration:underline;margin-bottom:50rpx;margin-top:85rpx" catchtap="go_home">哪些地方可以取氧？</view>
+	</view>
+	<view class="bottom_view">
+		<image src="../../images/invita-dbt.png" style="width:690rpx;height:260rpx"></image>
+		<!-- <image src="../../images/invita-bt.png" style="width:670rpx;height:88rpx;margin-left:10rpx;margin-bottom:80rpx"></image> -->
+		<image src="../../images/invita-lc.png" style="width:670rpx;height:140rpx;margin-left:10rpx;"></image>
+		<view class="bottom_text">
+			<view class="bottom_text_view">
+				<text>邀请新用户</text>
+				<text>完成注册</text>
+			</view>
+			<view class="bottom_text_view">
+				<text>被邀请人</text>
+				<text>完成下单</text>
+			</view>
+			<view class="bottom_text_view">
+				<text>邀请人获得</text>
+				<text>吸氧奖励</text>
+			</view>
+		</view>
+		<view class="bottom_leaf">
+			<view class="bottom_leaf_left">
+				<image src="../../images/invita-list-icon.png" class="bottom_leaf_left_images"></image>
+				<text class="bottom_leaf_left_text">1</text>
+			</view>
+			<view class="bottom_leaf_right">
+				<text style="font-size:30rpx;">被邀请人限定范围：</text>
+				<text style="font-size:28rpx;font-weight:500;color:#424242">抱抱氧新注册用户</text>
+			</view>
+		</view>
+		<view class="bottom_leaf">
+			<view class="bottom_leaf_left">
+				<image src="../../images/invita-list-icon.png" class="bottom_leaf_left_images"></image>
+				<text class="bottom_leaf_left_text">2</text>
+			</view>
+			<view class="bottom_leaf_right">
+				<text style="font-size:30rpx;">奖励：</text>
+				<text style="font-size:28rpx;font-weight:500;color:#424242">每成功邀请1位新用户，即获得1次免费氧疗服务。</text>
+			</view>
+		</view>
+		<view class="bottom_leaf">
+			<view class="bottom_leaf_left">
+				<image src="../../images/invita-list-icon.png" class="bottom_leaf_left_images"></image>
+				<text class="bottom_leaf_left_text">3</text>
+			</view>
+			<view class="bottom_leaf_right">
+				<text style="font-size:30rpx;">邀请成功：</text>
+				<text style="font-size:28rpx;font-weight:500;color:#424242">被邀请人收到邀请，输入您的邀请码，登录平台并成功完成一次订单，视为邀请成功。</text>
+			</view>
+		</view>
+		<view class="bottom_leaf">
+			<view class="bottom_leaf_left">
+				<image src="../../images/invita-list-icon.png" class="bottom_leaf_left_images"></image>
+				<text class="bottom_leaf_left_text">4</text>
+			</view>
+			<view class="bottom_leaf_right">
+				<text style="font-size:30rpx;">邀请规则：</text>
+				<text style="font-size:28rpx;font-weight:500;color:#424242">被邀请人员注册时，输入您的邀请码，即被绑定邀请关系。</text>
+			</view>
+		</view>
+		<image style="width:670rpx;height:40rpx;margin-top:80rpx;margin-bottom:80rpx" src="../../images/invita-qt.png"></image>
+		<text style="font-size:28rpx;line-height:36rpx;font-weight:500;width:546rpx;margin-left:60rpx;margin-bottom:60rpx">在法律允许的范围内湖南新云医疗装备工业有限公司拥有活动的最终解释权。</text>
+	</view>
+	<view class="button_view">
+		<view class="button_view_go" style="border:1rpx solid #D8D8E2;" catchtap="go_home">进入抱抱氧首页</view>
+		<view class="button_view_go" style="background-color:#0080FF;color:white" catchtap="go_login">现在去注册</view>
+	</view>
+</view>

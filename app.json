@@ -1,0 +1,64 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/purchase/index",
+    "pages/member/index",
+    "pages/login/index",
+    "pages/login/register",
+    "pages/login/code",
+    "pages/purchase/success",
+    "pages/purchase/details",
+    "pages/purchase/list",
+    "pages/binding/index",
+    "pages/binding/message",
+    "pages/binding/get_bag",
+    "pages/member/invitation",
+    "pages/member/service",
+    "pages/member/friends",
+    "pages/index/equipment",
+    "pages/member/grade",
+    "pages/partner/information",
+    "pages/login/agreement",
+    "pages/member/invitation_one",
+    "pages/member/photo"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fafbfc",
+    "navigationBarTitleText": "抱抱氧一路有氧伴你行",
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "default"
+  },
+  "tabBar": {
+    "selectedColor": "#202020",
+    "color": "#7d7d7d",
+    "borderStyle": "white",
+    "backgroundColor": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "扫码首页",
+        "iconPath": "images/tab-sm-normal.png",
+        "selectedIconPath": "images/tab-sm-selected.png"
+      },
+      {
+        "pagePath": "pages/member/index",
+        "text": "个人中心",
+        "iconPath": "images/tab-gr-normal.png",
+        "selectedIconPath": "images/tab-gr-selected.png"
+      }
+    ]
+  },
+  "plugins": {
+    "chooseLocation": {
+      "version": "1.0.5",
+      "provider": "wx76a9a06e5b4e693e"
+    }
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于查看氧疗机位置！"
+    }
+  },
+  "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,135 @@
+<!--pages/purchase/details.wxml-->
+<view class="main">
+	<view class="hread">
+		<!-- <view class="content"> -->
+
+		<!-- </view> -->
+	</view>
+	<view class="content_view">
+		<view class="conet_view_text">
+			<view class="conet_view_text_left">
+				<text wx:if="{{reponse.status == 1}}" style="font-size:42rpx;line-height:42rpx;margin-left: 30rpx;">待付款</text>
+				<text wx:if="{{reponse.status == 2}}" style="font-size:42rpx;line-height:42rpx;margin-left: 30rpx;">预付款</text>
+				<text wx:if="{{reponse.status == 3}}" style="font-size:42rpx;line-height:42rpx;margin-left: 30rpx;" >已付款</text>
+				<text wx:if="{{reponse.status == 4}}" style="font-size:42rpx;line-height:42rpx;margin-left: 30rpx;">待取氧</text>
+				<text wx:if="{{reponse.status == 5}}" style="font-size:42rpx;line-height:42rpx;margin-left: 30rpx;">已取氧</text>
+				<text wx:if="{{reponse.status == 8}}" style="font-size:42rpx;line-height:42rpx;margin-left: 30rpx;">订单取消</text>
+				<text wx:if="{{reponse.status == 10}}" style="font-size:42rpx;line-height:42rpx;margin-left: 30rpx;">交易成功</text>
+				<text wx:if="{{reponse.status == 12}}" style="font-size:42rpx;line-height:42rpx;margin-left: 30rpx;">已退款</text>
+				<text wx:if="{{reponse.status == 1}}" style="font-size:24rpx;line-height:36rpx;margin-top:26rpx">{{sendTime}}秒后,如订单未支付将自动取消！</text>
+				<text wx:if="{{reponse.status == 4}}" style="font-size:22rpx;line-height:36rpx;margin-top:26rpx">请在按钮点击【开始取氧】开始后，{{sendTime}}秒完</text>
+			</view>
+			<image class="conet_view_images" wx:if="{{reponse.status == 1}}" src="../../images/order-pic-payment.png"></image>
+			<image class="conet_view_images" wx:if="{{reponse.status == 3 || reponse.status == 10}}" src="../../images/order-pic-payment02.png"></image>
+			<image class="conet_view_images" wx:if="{{reponse.status == 12}}" src="../../images/order-pic-refund.png"></image>
+			<image class="conet_view_images" wx:if="{{reponse.status == 4}}" src="../../images/order-pic-oxygen.png"></image>
+			<image class="conet_view_images" wx:if="{{reponse.status == 5}}" src="../../images/order-pic-oxygen02.png"></image>
+		</view>
+		<view class="content_views" style="margin-bottom:50rpx">
+			<view class="content_view_list" style="justify-content: space-between;">
+				<text style="font-size:34rpx;line-height:34rpx;font-weight:blod">{{reponse.goodsName}}</text>
+				<view class="conten_text">
+					<text style="color:#FF773B;font-size:36rpx;line-height:30rpx;font-weight:blod" wx:if="{{reponse.status != 12 || reponse.status != 5}}">￥{{reponse.salePrice}}</text>
+					<text style="color:#FF773B;font-size:36rpx;line-height:30rpx;font-weight:blod" wx:if="{{reponse.status == 12}}">退款￥{{reponse.salePrice}}</text>
+				</view>
+			</view>
+			<view class="content_view_list" wx:if="{{reponse.status == 12}}">
+				<view class="content_view_icon">
+					<image src="../../images/order-details-dk.png" class="content_icon" mode='aspectFit'></image>
+					<text style="font-size:30rpx;line-height:30rpx;font-weight:blod;color:#7d7d7d;">优惠赠送</text>
+				</view>
+				<text style="font-size:30rpx;line-height:30rpx;font-weight:blod;">养疗服务{{reponse.status}}次</text>
+				<view class="content_view_icon" style="position:absolute;right:0">
+					<text style="color:#FF773B;font-size:30rpx;line-height:30rpx;font-weight:blod">已失效</text>
+					<image src="../../images/personal-list-more.png" style="width:48rpx;height:48rpx;margin-left:15rpx"></image>
+				</view>
+			</view>
+			<view class="content_view_list">
+				<view class="content_view_icon">
+					<image src="../../images/order-details-wd.png" class="content_icon" mode='aspectFit'></image>
+					<text style="font-size:30rpx;line-height:30rpx;font-weight:blod;color:#7d7d7d;">网点名称</text>
+				</view>
+				<text style="font-size:30rpx;line-height:30rpx;font-weight:blod">{{reponse.netName}}</text>
+			</view>
+			<view class="content_view_list" wx:if="{{reponse.bagSn}}">
+				<view class="content_view_icon">
+					<image src="../../images/order-details-sn.png" class="content_icon" mode='aspectFit'></image>
+					<text style="font-size:30rpx;line-height:30rpx;font-weight:blod;color:#7d7d7d;">氧疗袋SN</text>
+				</view>
+				<text style="font-size:30rpx;line-height:30rpx;font-weight:blod">{{reponse.bagSn}}</text>
+			</view>
+			<view class="content_view_list" wx:if="{{reponse.status != 1}}">
+				<view class="content_view_icon">
+					<image src="../../images/order-details-zf.png" class="content_icon" mode='aspectFit'></image>
+					<text style="font-size:30rpx;line-height:30rpx;font-weight:blod;color:#7d7d7d;">支付方式</text>
+				</view>
+				<text style="font-size:30rpx;line-height:30rpx;font-weight:blod" wx:if="{{reponse.channel == 1}}">微信支付</text>
+				<text style="font-size:30rpx;line-height:30rpx;font-weight:blod" wx:if="{{reponse.channel == 2}}">支付宝支付</text>
+				<text style="font-size:30rpx;line-height:30rpx;font-weight:blod" wx:if="{{reponse.channel == 3}}">银联支付</text>
+				<text style="font-size:30rpx;line-height:30rpx;font-weight:blod" wx:if="{{reponse.channel == 4}}">免费氧疗服务次数抵扣</text>
+			</view>
+			<view class="content_view_list">
+				<view class="content_view_icon">
+					<image src="../../images/order-details-bh.png" class="content_icon" mode='aspectFit'></image>
+					<text style="font-size:30rpx;line-height:30rpx;font-weight:blod;color:#7d7d7d;">订单编号</text>
+				</view>
+				<text style="font-size:30rpx;line-height:30rpx;font-weight:blod">{{reponse.orderId}}</text>
+			</view>
+			<view class="content_view_list" wx:if="{{reponse.status == 1 || reponse.status == 3 || reponse.status == 12 || reponse.status == 10}}" style='{{reponse.status == 1?"border:none":""}}'>
+				<view class="content_view_icon">
+					<image src="../../images/order-details-sj.png" class="content_icon" mode='aspectFit'></image>
+					<text style="font-size:30rpx;line-height:30rpx;font-weight:blod;color:#7d7d7d;">创建时间</text>
+				</view>
+				<text style="font-size:30rpx;line-height:30rpx;font-weight:blod">{{reponse.createDate}}</text>
+			</view>
+			<view class="content_view_list" wx:if="{{reponse.status == 3 || reponse.status == 12 || reponse.status == 10}}" style="border:none">
+				<view class="content_view_icon">
+					<image src="../../images/order-details-sj.png" class="content_icon" mode='aspectFit'></image>
+					<text style="font-size:30rpx;line-height:30rpx;font-weight:blod;color:#7d7d7d;">付款时间</text>
+				</view>
+				<text style="font-size:30rpx;line-height:30rpx;font-weight:blod">{{reponse.payDate}}</text>
+			</view>
+			<view class="content_view_list" wx:if="{{reponse.status == 12}}" style="border:none">
+				<view class="content_view_icon">
+					<image src="../../images/order-details-sj.png" class="content_icon" mode='aspectFit'></image>
+					<text style="font-size:30rpx;line-height:30rpx;font-weight:blod;color:#7d7d7d;">退款时间</text>
+				</view>
+				<text style="font-size:30rpx;line-height:30rpx;font-weight:blod">{{reponse.claimDate}}</text>
+			</view>
+			<!-- <view class="content_view_list" wx:if="{{reponse.status == 5}}">
+				<view class="content_view_icon">
+					<image src="../../images/order-details-dk.png" class="content_icon" mode='aspectFit'></image>
+					<text style="font-size:30rpx;line-height:30rpx;font-weight:blod;color:#7d7d7d;">氧疗服务抵扣</text>
+				</view>
+				<text style="font-size:30rpx;line-height:30rpx;font-weight:blod">氧疗服务{{reponse.costOxyCnt}}次</text>
+			</view> -->
+			<view class="content_view_list" wx:if="{{reponse.status == 4 || reponse.status == 5}}">
+				<view class="content_view_icon">
+					<image src="../../images/order-details-sj.png" class="content_icon" mode='aspectFit'></image>
+					<text style="font-size:30rpx;line-height:30rpx;font-weight:blod;color:#7d7d7d;">确认取氧时间</text>
+				</view>
+				<text style="font-size:30rpx;line-height:30rpx;font-weight:blod">{{reponse.confirmOxyDate}}</text>
+			</view>
+			<view class="content_view_list" wx:if="{{reponse.status == 5}}" style="border:none">
+				<view class="content_view_icon">
+					<image src="../../images/order-details-sj.png" class="content_icon" mode='aspectFit'></image>
+					<text style="font-size:30rpx;line-height:30rpx;font-weight:blod;color:#7d7d7d;">完成取氧时间</text>
+				</view>
+				<text style="font-size:30rpx;line-height:30rpx;font-weight:blod">{{reponse.finishOxyDate}}</text>
+			</view>
+		</view>
+		<!-- <text wx:if="{{(reponse.status == 3||reponse.status == 10) && !reponse.bagSn}}" style="font-size:24rpx;margin-bottom:50rpx">请在抱抱氧氧疗机设备刷卡识别绑定氧疗袋</text> -->
+		<view class="text_message" wx:if="{{(reponse.status == 3||reponse.status == 10) && !reponse.bagSn}}">请在抱抱氧氧疗机设备感应识别绑定氧疗袋</view>
+	</view>
+	<view class="bottom_view" wx:if="{{reponse.status == 1 || reponse.status == 3 || reponse.status == 5 || reponse.status == 10}}">
+		<text style="margin-left:30rpx" wx:if="{{reponse.status == 1}}">合计：<text style="color:#FF773B;font-size: 34rpx;">￥{{reponse.salePrice}}</text></text>
+		<view style="display:flex;flex-direction: row;align-items: center;" wx:if="{{reponse.status == 1}}">
+			<view class="bottom_view_button" catchtap="buyClose" data-id="{{reponse.orderId}}" style="background-color: white;border:1rpx solid #D8D8E2;width:200rpx;margin-right:15rpx">取消订单</view>
+			<view class="bottom_view_button" wx:if="{{reponse.channel == 1}}" catchtap="buyShow" data-id="{{reponse.orderId}}" style="background-color: #0080FF;color:white;margin-right:30rpx;width:200rpx;">立即支付</view>
+			<view class="bottom_view_button" wx:if="{{reponse.channel == 4}}" catchtap="buyNumberShow" data-id="{{reponse.orderId}}" style="background-color: #0080FF;color:white;margin-right:30rpx;width:200rpx;">立即支付</view>
+		</view>
+		<!-- <view class="bottom_view_button" wx:if="{{reponse.status == 3 && !reponse.bagSn}}" catchtap="goPhone" style="background-color: white;border:1rpx solid #D8D8E2;margin-left:30rpx">申请售后</view>
+		<view class="bottom_view_button" wx:if="{{reponse.status == 3 && !reponse.bagSn}}" style="background-color: #0080FF;color:white;margin-right:30rpx" catchtap="goBag" data-id="{{reponse.orderId}}">扫码绑定氧疗袋</view> -->
+		<view class="bottom_view_button" wx:if="{{(reponse.status == 5 || reponse.status == 3 || reponse.status == 10)}}" catchtap="goPhone" style="width:690rpx;background-color: white;border:1rpx solid #D8D8E2;margin-left:30rpx">申请售后</view>
+	</view>
+</view>

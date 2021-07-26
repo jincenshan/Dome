@@ -1,0 +1,20 @@
+{
+  "name": "boby",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.ncmed.cn:o-x-y/bby-miniprogram.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "miniprogram-sm-crypto": "^0.2.4",
+    "wxml-to-canvas": "^1.1.1"
+  },
+  "devDependencies": {},
+  "description": ""
+}

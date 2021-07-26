@@ -1,0 +1,5 @@
+<!--pages/member/photo.wxml-->
+<!-- 生成图片 -->
+<view class="button" catchtap="go_photo">立即保存图片到手机相册</view>
+<wxml-to-canvas class="widget"></wxml-to-canvas>
+<image src="{{src}}" style="width: {{width}}px; height: {{height}}px" mode='aspectFit'></image>

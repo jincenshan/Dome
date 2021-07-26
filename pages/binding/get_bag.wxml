@@ -1,0 +1,22 @@
+<!--pages/binding/get_bag.wxml-->
+<view class="main">
+	<image src="../../images/oxygenbag-quan-bg.png" class="hread_images"></image>
+	<view class="content">
+		<view class="content_view">
+			<view class="content_view_quan" style="background-image: url(../../images/oxygenbag-bg.png);">
+				<image src="../../images/oxygenbag-bg.png" class="content_view_quan_images"></image>
+				<view class="content_view_quan_left">
+					<text style="font-size:36rpx;line-height:51rpx;font-weight: bold;">5次</text>
+					<text style="font-size:28rpx;line-height:36rpx">氧疗服务</text>
+				</view>
+				<view class="content_view_quan_right">
+					<text style="font-size:28rpx;line-height:51rpx;font-weight: bold;margin-left:30rpx">仅用于氧疗机取氧使用</text>
+					<text style="font-size:24rpx;line-height:36rpx;color:#424242;margin-left:30rpx">请在2020-05-20前完成消费</text>
+				</view>
+			</view>
+			<text style="font-size:22rpx;line-height:28rpx;margin-bottom:40rpx;">优惠抵扣已入账号：{{phone}}，请注意查收</text>
+		</view>
+		<view class="button_buy" catchtap="goList">查看氧疗服务次数</view>
+    <view class="button_buy" catchtap="go_home" style="background-color: white;border:1rpx solid #D8D8E2;color:black">返回首页</view>
+	</view>
+</view>

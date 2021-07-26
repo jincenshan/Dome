@@ -1,0 +1,57 @@
+<!--pages/purchase/index.wxml-->
+<view class="main">
+	<view class="hread"></view>
+	<view class="content_views">
+		<view class="content_view" style="justify-content: space-between;">
+			<image src="../../images/kong01.png" style="width:146rpx;height:43rpx" wx:if="{{reponse.length == 0}}"></image>
+			<text style="font-size:34rpx;line-height:34rpx;font-weight:blod" wx:if="{{reponse.length != 0}}">{{reponse.goodsName}}</text>
+			<view class="conten_text">
+				<image src="../../images/kong02.jpg" style="width:106rpx;height:43rpx;margin-left:10rpx" wx:if="{{reponse.length == 0}}"></image>
+				<text style="text-decoration:line-through;color:#7d7d7d;font-size:24rpx;line-height:24rpx;margin-right:20rpx" wx:if="{{reponse.length != 0}}">￥{{reponse.originPrice}}</text>
+				<image src="../../images/kong03.png" style="width:136rpx;height:43rpx" wx:if="{{reponse.length == 0}}"></image>
+				<text style="color:#FF773B;font-size:36rpx;line-height:30rpx;font-weight:blod" wx:if="{{reponse.length != 0}}">￥{{reponse.salePrice}}</text>
+			</view>
+		</view>
+		<view class="content_view">
+			<view class="content_view_icon">
+				<image src="../../images/order-details-wd.png" class="content_icon" mode='aspectFit'></image>
+				<text style="font-size:30rpx;line-height:30rpx;font-weight:blod;color:#7d7d7d;">网点名称</text>
+			</view>
+			<image src="../../images/kong.png" style="width:406rpx;height:43rpx" wx:if="{{reponse.length == 0}}"></image>
+			<text style="font-size:30rpx;line-height:30rpx;font-weight:blod" wx:if="{{reponse.length != 0}}">{{reponse.netName}}</text>
+		</view>
+		<view class="content_view" wx:if="{{reponse.bagSn}}">
+			<view class="content_view_icon">
+				<image src="../../images/order-details-sn.png" class="content_icon" mode='aspectFit'></image>
+				<text style="font-size:30rpx;line-height:30rpx;font-weight:blod;color:#7d7d7d;">氧疗袋SN</text>
+			</view>
+			<image src="../../images/kong.png" style="width:406rpx;height:43rpx" wx:if="{{reponse.length == 0}}"></image>
+			<text style="font-size:30rpx;line-height:30rpx;font-weight:blod" wx:if="{{reponse.length != 0}}">{{reponse.bagSn}}</text>
+		</view>
+		<view class="content_view">
+			<view class="content_view_icon">
+				<image src="../../images/order-details-bh.png" class="content_icon" mode='aspectFit'></image>
+				<text style="font-size:30rpx;line-height:30rpx;font-weight:blod;color:#7d7d7d;">订单编号</text>
+			</view>
+			<image src="../../images/kong.png" style="width:406rpx;height:43rpx" wx:if="{{reponse.length == 0}}"></image>
+			<text style="font-size:30rpx;line-height:30rpx;font-weight:blod" wx:if="{{reponse.length != 0}}">{{reponse.orderId}}</text>
+		</view>
+		<view class="content_view" style="border-bottom:none;align-item:flex-start;height:auto">
+			<view class="content_view_icon">
+				<image src="../../images/order-details-sm.png" class="content_icon" mode='aspectFit'></image>
+				<text style="font-size:30rpx;line-height:30rpx;font-weight:blod;color:#7d7d7d;">订单说明</text>
+			</view>
+			<!-- <view style="margin-top:40rpx;width:420rpx"> -->
+			<image src="../../images/kong.png" style="width:406rpx;height:43rpx;margin-top: 20rpx;margin-bottom: 20rpx;" wx:if="{{reponse.length == 0}}"></image>
+			<text style="width:420rpx;font-size:30rpx;line-height:38rpx;font-weight:blod;margin-top: 20rpx;margin-bottom: 20rpx;"  wx:if="{{reponse.length != 0}}">{{reponse.remark}}</text>
+			<!-- </view> -->
+		</view>
+		<view class="button_buy" catchtap="go_buy" wx:if="{{reponse.channel == 1}}">
+			提交订单，去支付<text style="margin-left:30rpx">{{sendTime}}秒</text>
+		</view>
+		<view class="button_buy" catchtap="go_buy_number" wx:if="{{reponse.channel == 4}}">
+			提交订单<text style="margin-left:30rpx">{{sendTime}}秒</text>
+		</view>
+	</view>
+	<!-- </view> -->
+</view>

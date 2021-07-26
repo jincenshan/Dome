@@ -1,0 +1,39 @@
+<!--pages/purchase/list.wxml-->
+<view class="main">
+	<view class="hread">
+		<view class="hread_view" catchtap="hreadShow" data-id="2">
+			<text style='{{orderType == 2?"color:#7d7d7d":"color:#424242"}}'>我的氧疗袋</text>
+			<view class="line" wx:if="{{orderType == 2}}"></view>
+		</view>
+		<view class="hread_view" catchtap="hreadShow" data-id="1">
+			<text style='{{orderType == 1?"color:#7d7d7d":"color:#424242"}}'>我的氧疗服务</text>
+			<view class="line" wx:if="{{orderType == 1}}"></view>
+		</view>
+	</view>
+	<view class="content_div">
+		<view class="content_view" catchtap="buyShow" wx:for="{{list_date}}" wx:key="item" data-id="{{item.id}}">
+			<view class="content_hread">
+				<text wx:if="{{item.status == 1}}" style="color:#FF773B">待付款</text>
+				<text wx:if="{{item.status == 2}}" style="color:#FF773B">预付款</text>
+				<text wx:if="{{item.status == 3}}" style="color:#FF773B" >已付款</text>
+				<text wx:if="{{item.status == 4}}" style="color:#FF773B">待取氧</text>
+				<text wx:if="{{item.status == 5}}" style="color:#7D7D7D">已取氧</text>
+				<text wx:if="{{item.status == 8}}" style="color:#7D7D7D">订单取消</text>
+				<text wx:if="{{item.status == 10}}" style="color:#FF773B">交易成功</text>
+				<text wx:if="{{item.status == 12}}" style="color:#7D7D7D">已退款</text>
+				<text wx:if="{{orderType == 1}}">{{item.goodsName}}</text>
+				<text wx:if="{{orderType == 2}}">￥{{item.salePrice}}</text>
+			</view>
+			<text style="width:630rpx;font-size:30rpx;line-height:30rpx;margin-top:30rpx;margin-bottom:26rpx;" wx:if="{{orderType == 2}}">商品类型：{{item.goodsName}}</text>
+			<text style="width:630rpx;font-size:30rpx;line-height:30rpx;margin-bottom:26rpx;margin-top:30rpx" wx:if="{{orderType == 1}}">氧疗袋SN：<text wx:if="{{item.bagSn}}">{{item.bagSn}}</text><text wx:if="{{!item.bagSn}}" style="color:#0080ff">未绑定</text></text>
+			<text style="width:630rpx;font-size:30rpx;line-height:30rpx;margin-bottom:26rpx">网点名称：{{item.netName}} </text>
+			<text style="width:630rpx;font-size:30rpx;line-height:30rpx;margin-bottom:40rpx" wx:if="{{orderType == 2}}">创建时间：{{item.createDate}}</text>
+			<text style="width:630rpx;font-size:30rpx;line-height:30rpx;margin-bottom:40rpx" wx:if="{{orderType == 1 && item.status == 4}}">确认取氧时间：{{item.modifyDate}}</text>
+			<text style="width:630rpx;font-size:30rpx;line-height:30rpx;margin-bottom:40rpx" wx:if="{{orderType == 1 && item.status == 5}}">完成取氧时间：{{item.modifyDate}}</text>
+			<view class="button_go" catchtap="buyShow" wx:if="{{(item.status == 1 || item.status == 2 )&& orderType == 2}}" data-id="{{item.id}}">支付</view>
+			<!-- <view class="button_go" catchtap="goBag" wx:if="{{(item.status == 10 || item.status == 3) && orderType == 2 && !item.bagSn}}" data-id="{{item.id}}">绑定氧疗袋</view> -->
+			<view class="text_message" wx:if="{{(item.status == 10 || item.status == 3) && orderType == 2 && !item.bagSn}}">请在抱抱氧氧疗机设备感应识别绑定氧疗袋</view>
+		</view>
+	</view>
+		<image src="../../images/no_date.png" wx:if="{{list_date.length == 0 && pageNo == 1}}" class="no_date"></image>
+</view>

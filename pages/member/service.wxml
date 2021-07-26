@@ -1,0 +1,43 @@
+<!--pages/member/service.wxml-->
+<view class="main">
+	<view class="hread">
+		<view class="hread_view" catchtap="tabbarShow" data-id="1" style='{{tabbar_id == 1?"color:black":"color:#7D7D7D"}}'>
+			<text style="margin-bottom: 20rpx;">待使用（{{validCnt}}）</text>
+			<view class="line" wx:if="{{tabbar_id == 1}}"></view>
+		</view>
+		<view class="hread_view" catchtap="tabbarShow" data-id="2" style='{{tabbar_id == 2?"color:black":"color:#7D7D7D"}}'>
+			<text style="margin-bottom: 20rpx;">已使用（{{usedCnt}}）</text>
+			<view class="line" wx:if="{{tabbar_id == 2}}"></view>
+		</view>
+		<view class="hread_view" catchtap="tabbarShow" data-id="3" style='{{tabbar_id == 3?"color:black":"color:#7D7D7D"}}'>
+			<text style="margin-bottom: 20rpx;">已失效（{{invalidCnt}}）</text>
+			<view class="line" wx:if="{{tabbar_id == 3}}"></view>
+		</view>
+	</view>
+	<view class="content">
+		<view class="content_view" wx:for="{{list_date}}" wx:key="item">
+			<image src="../../images/coupons-ysy.png" style="width: 690rpx;height: 180rpx;position: absolute;z-index: -1;" wx:if="{{tabbar_id == 2 && item.state == 2}}"></image>
+			<image src="../../images/coupons-yq.png" style="width: 690rpx;height: 180rpx;position: absolute;z-index: -1;" wx:if="{{tabbar_id == 1 && item.state == 1 && (item.giveType == 2 || item.giveType == 3)}}"></image>
+			<image src="../../images/coupons-gm.png" style="width: 690rpx;height: 180rpx;position: absolute;z-index: -1;" wx:if="{{tabbar_id == 1 && item.state == 1 && item.giveType == 1}}"></image>
+			<image src="../../images/coupons-gq.png" style="width: 690rpx;height: 180rpx;position: absolute;z-index: -1;" wx:if="{{tabbar_id == 3 && item.state == 3}}"></image>
+			<image src="../../images/coupons-tk.png" style="width: 690rpx;height: 180rpx;position: absolute;z-index: -1;" wx:if="{{tabbar_id == 3 && item.giveType == 1 && item.state == 4}}"></image>
+			<view class="content_view_left" wx:if="{{tabbar_id == 1}}" style='{{item.giveType == 1?"color:#FF3B3B":"color:white"}}'>
+				<text style="font-size:36rpx;font-weight:50rpx">1次</text>
+				<text style="font-size:28rpx;font-weight:50rpx">氧疗服务</text>
+			</view>
+			<view class="content_view_left" wx:if='{{tabbar_id == 2 || tabbar_id == 3}}'>
+				<text style="font-size:36rpx;font-weight:50rpx">1次</text>
+				<text style="font-size:28rpx;font-weight:50rpx">氧疗服务</text>
+			</view>
+			<view class="content_view_right">
+				<text style="color:white;font-size:30rpx;font-weight:36rpx;margin-left:40rpx" wx:if="{{tabbar_id == 1 && (item.giveType == 2||item.giveType == 3)}}">邀请新用户成功下单获得</text>
+				<text style="font-size:30rpx;font-weight:36rpx;margin-left:40rpx" wx:if="{{tabbar_id != 1 && item.giveType == 2}}">邀请新用户成功下单获得</text>
+				<text style="font-size:30rpx;font-weight:36rpx;margin-left:40rpx" wx:if="{{item.giveType == 1}}">购买氧疗袋</text>
+				<!-- <text wx:if="{{tabbar_id == 1 && item.giveType == 1}}" style="color:#7D7D7D;font-size:20rpx;font-weight:36rpx;margin-left:40rpx;margin-top:10rpx">{{item.fromDate}} 至 {{item.toDate}} 使用</text> -->
+				<text class="date_text" style='{{tabbar_id == 1?((item.giveType ==2 || item.giveType ==3) ?"color:white;":"color:#FF3B3B"):"color:#FEBDBD;"}}'>{{item.fromDate}} 至 {{item.toDate}} 使用</text>
+				<text style="color:#FEBDBD;font-size:20rpx;font-weight:36rpx;margin-left:40rpx;margin-top:10rpx" wx:if="{{tabbar_id == 2}}">使用时间：{{item.useDate}}</text>
+			</view>
+		</view>
+	</view>
+	<image src="../../images/no_date.png" wx:if="{{list_date.length == 0 && pageNo == 1}}" class="no_date"></image>
+</view>

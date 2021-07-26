@@ -1,0 +1,8 @@
+/* pages/login/agreement.wxss */
+.main{
+  width: 750rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 42rpx;
+}

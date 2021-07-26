@@ -1,0 +1,61 @@
+<!--pages/purchase/success.wxml-->
+<view class="main">
+	<view class="hread">
+	</view>
+	<view class="content_view">
+		<image src="../../images/order-pic-success.png" style="width:360rpx;height:194rpx;margin-top:60rpx" mode='aspectFill'></image>
+		<text style="color:white;font-size:40rpx;font-weight:blod">支付成功</text>
+		<text style="color:white;font-size:42rpx;margin-right:10rpx;margin-top:36rpx" wx:if="{{channel != 4}}">￥{{money}}</text>
+		<view class="content_views">
+			<text style="font-size:36rpx;line-height:36rpx;font-weight:blod;margin-top:40rpx;" wx:if="{{channel == 1 && orderType == 2}}">请在氧疗机上刷卡识别绑定氧疗袋</text>
+			<text style="font-size:36rpx;line-height:36rpx;font-weight:blod;margin-top:40rpx;" wx:if="{{channel == 1 && orderType == 2}}">并下单取氧,您将获取<text style="color:red">{{giveCnt}}</text>次氧疗服务次数</text>
+			<text style="font-size:36rpx;line-height:36rpx;font-weight:blod;margin-top:40rpx;" wx:if="{{channel == 4}}">本次氧疗服务次数扣减<text style="color:red">1</text>次</text>
+			<text style="font-size:36rpx;line-height:36rpx;font-weight:blod;margin-top:40rpx;" wx:if="{{channel == 4}}">您的账号上还有<text style="color:red">{{validGiveCnt}}</text>次氧疗服务</text>
+			<view class="content_views_message">
+				<image src="../../images/tips.png" style="width:68rpx;height:68rpx;margin-left:30rpx"></image>
+				<view class="content_views_message_text">
+					<text wx:if="{{channel == 1 && orderType == 2}}">请根据氧疗机上提示下单取氧</text>
+					<text wx:if="{{channel == 1 && orderType == 1}}">请关注氧疗机屏幕提示</text>
+					<text wx:if="{{channel == 1 && orderType == 1}}">按提示操作取氧</text>
+					<text wx:if="{{channel == 4}}">请按照氧疗机上的提示</text>
+					<text wx:if="{{channel == 4}}">进行取氧操作</text>
+				</view>
+			</view>
+			<text style="width:630rpx;color:#7d7d7d;font-size:24rpx;margin-bottom:24rpx" wx:if="{{channel == 1 && orderType == 2}}">如果您对订单有疑问，请在购买当天联系运营人员，因商品特殊，超出此时间，我们将停止对此订单的售后服务。</text>
+		</view>
+		<view class="button_buy" catchtap="goHome" wx:if='{{scanType == "equip"}}'><text>返回首页，扫一扫，下单取氧</text></view>
+		<!-- <view class="button_buy_home" catchtap="goList" wx:if='{{scanType == "equip"}}'>查看订单</view> -->
+		<view class="button_buy" catchtap="goList" wx:if='{{scanType != "equip"}}'>查看订单</view>
+		<view class="button_buy_home" catchtap="goHome" wx:if='{{scanType != "equip"}}'>返回首页</view>
+	</view>
+</view>
+<!-- 绑定氧疗袋 -->
+<view class="black_view" wx:if="{{is_bag}}">
+	<view class="black_view_content">
+		<image src="../../images/prompt-bd.png" class="black_view_images" mode='aspectFit'></image>
+		<text style="font-size:34rpx;line-height:34rpx;margin-top:138rpx">绑定氧疗袋，获取{{giveCnt}}次氧疗服务次数</text>
+		<view class="black_view_button">
+			<view class="black_view_buttons" catchtap="goBagColse" style="border:1rpx solid #eaeaea;background-color:white">稍后再说</view>
+			<view class="black_view_buttons" catchtap="goBag" style="border:1rpx solid #eaeaea;background-color:#0080FF;color:white">现在就去扫码绑定</view>
+		</view>
+	</view>
+</view>
+<!-- 网点弹窗 -->
+<view class="black_view" wx:if="{{is_net}}">
+	<view class="black_net">
+		<image src="../../images/prompt-hd-bg.png" class="black_net_images"></image>
+		<view class="black_net_view">
+			<image src="../../images/prompt-hd-quan.png" class="black_net_view_images"></image>
+			<view class="black_net_view_left">
+				<text style="font-size:36rpx;line-height:51rpx;font-weight: bold;margin-left:20rpx">{{giveCnt}}次</text>
+				<text style="font-size:28rpx;line-height:36rpx;margin-left:20rpx">氧疗服务</text>
+			</view>
+			<view class="black_net_view_right">
+				<text style="font-size:28rpx;line-height:51rpx;font-weight: bold;margin-left:30rpx">仅用于氧疗机取氧使用</text>
+				<text style="font-size:24rpx;line-height:36rpx;color:#424242;margin-left:30rpx">请在{{expiryDate}}前完成消费</text>
+			</view>
+		</view>
+		<text style="font-size:22rpx;line-height:28rpx;margin-bottom:60rpx;color:white">氧疗服务次数已入账号：{{phone}}，请注意查收</text>
+	</view>
+	<image src="../../images/close.png" class="black_net_colse" catchtap="goBagColse" mode='aspectFit'></image>
+</view>

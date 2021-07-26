@@ -1,0 +1,63 @@
+/* pages/login/register.wxss */
+.main{
+  width: 750rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  background-color: #f9f9f9;
+  height: 100%;
+}
+.conent_images{
+  width: 520rpx;
+  height: 380rpx;
+  margin-bottom: 40rpx;
+}
+.conent_view{
+  width: 630rpx;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20rpx;
+  background-color: white;
+  box-shadow: 0px 1px 2px 1px rgba(161, 178, 201, 0.3);
+}
+.input_view{
+  width: 630rpx;
+  height: 120rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 28rpx;
+  line-height: 28rpx;
+  border-top:1rpx solid #d8d8e2;
+  margin-top: 40rpx;
+}
+.code_view{
+  width: 200rpx;
+  height: 68rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border-radius: 34rpx;
+  border:1rpx solid #d8d8e2;
+  margin-right: 38rpx;
+  font-size: 30rpx;
+  line-height: 30rpx;
+  color: #7D7D7D;
+}
+.button_view{
+  width: 630rpx;
+  height: 80rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border-radius: 40rpx;
+  background-color: #0080FF;
+  font-size: 30rpx;
+  line-height: 30rpx;
+  color: white;
+  margin-top: 60rpx;
+}

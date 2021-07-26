@@ -1,0 +1,80 @@
+/* pages/binding/get_bag.wxss */
+.main{
+  width: 750rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+.hread_images{
+  width: 750rpx;
+  height: 516rpx;
+  display: flex;
+}
+.content{
+  width: 750rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  z-index: 2;
+  top: 470rpx;
+  left: 0;
+}
+.content_view{
+  width: 690rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.content_view_quan{
+  width: 630rpx;
+  display: flex;
+  height: 180rpx;
+  flex-direction: row;
+  margin-top: 50rpx;
+  margin-bottom: 50rpx;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+.content_view_quan_images{
+  width: 630rpx;
+  height: 180rpx;
+  display: flex;
+  position: absolute;
+  z-index: -1;
+}
+.content_view_quan_left{
+  width: 206rpx;
+  height: 180rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #FF3B3B;
+}
+.content_view_quan_right{
+  width: 420rpx;
+  height: 180rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.button_buy{
+  width: 650rpx;
+  height: 90rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: 30rpx;
+  border-radius: 45rpx;
+  background-color: #FF3B3B;
+  color: white;
+  font-weight: bold;
+  line-height: 90rpx;
+  margin-top: 60rpx;
+}

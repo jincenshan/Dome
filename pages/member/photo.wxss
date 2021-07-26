@@ -1,0 +1,21 @@
+/* pages/member/photo.wxss */
+.widget {
+
+}
+.button{
+  width: 690rpx;
+  height: 90rpx;
+  border-radius: 45rpx;
+  background-color: #0080FF;
+  color: white;
+  font-size: 30rpx;
+  line-height: 30rpx;
+  font-weight: bold;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-left: 30rpx;
+  margin-bottom: 30rpx;
+  margin-top: 30rpx;
+}

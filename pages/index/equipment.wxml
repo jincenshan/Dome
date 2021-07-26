@@ -1,0 +1,38 @@
+<!--pages/index/equipment.wxml-->
+<view class="main">
+	<view class="text_view">
+		<text style="margin-left:30rpx">氧疗机距离为导航距离，仅供参考</text>
+	</view>
+	<view class="content" wx:for="{{markers}}" wx:key="item">
+		<view class="content_text" style="margin-top:40rpx;align-items: flex-start;">
+			<view style="display:flex;flex-direction: column;white-space: nowrap;overflow: hidden;text-overflow:ellipsis;">
+				<text style="font-size:34rpx;line-height:34rpx;font-weight:bold;white-space: nowrap;overflow: hidden;text-overflow:ellipsis;">{{item.address}}</text>
+				<text style="font-size:28rpx;line-height:28rpx;margin-top:20rpx">{{item.spec}}</text>
+				<text wx:if="{{item.tel}}" style="font-size:28rpx;line-height:28rpx;margin-top:20rpx" catchtap="go_phone" data-tel="{{item.tel}}">{{item.tel}}</text>
+			</view>
+			<view style="display:flex;flex-direction: column;align-items:center;">
+				<text style="font-size:28rpx;line-height:28rpx;font-weight:bold;margin-bottom:20rpx">{{item.distance}}m</text>
+				<image src="../../images/nearlist-navigation.png" style="width:140rpx;height:68rpx;" mode='aspectFill' catchtap="go_gaode" data-id="{{item.id}}"></image>
+			</view>
+		</view>
+		<!-- <view class="content_text" style="margin-top:40rpx">
+			<text style="font-size:34rpx;line-height:34rpx;font-weight:bold">{{item.name}}</text>
+			<text style="font-size:28rpx;line-height:28rpx;font-weight:bold">{{item.distance}}m</text>
+		</view>
+		<view class="content_text" style="margin-top:20rpx">
+			<view style="display:flex;flex-direction: column;">
+				<text style="font-size:28rpx;line-height:28rpx;">{{item.spec}}</text>
+				<text style="font-size:28rpx;line-height:28rpx;margin-top:20rpx">{{item.tel}}</text>
+			</view>
+			<image src="../../images/nearlist-navigation.png" style="width:140rpx;height:68rpx;" mode='aspectFill' catchtap="go_gaode" data-id="{{item.id}}"></image>
+		</view> -->
+		<view class="content_text" style="justify-content: flex-start;border-top:1rpx solid #EAEAEA;margin-top:20rpx;height:80rpx">
+			<image src="../../images/nearlist-warning03.png" style="width:30rpx;height:30rpx" wx:if='{{item.status == "NORMAL"}}'></image>
+			<image src="../../images/nearlist-warning02.png" style="width:30rpx;height:30rpx" wx:if='{{item.status == "ALARM"}}'></image>
+			<image src="../../images/nearlist-warning01.png" style="width:30rpx;height:30rpx" wx:if='{{item.status == "OXYSUPPLY"}}'></image>
+			<text style="font-size:28rpx;line-height:28rpx;font-weight:bold;margin-left:20rpx;color:#00CC99;" wx:if='{{item.status == "NORMAL"}}'>正常运行</text>
+			<text style="font-size:28rpx;line-height:28rpx;font-weight:bold;margin-left:20rpx;color:#FE384B;" wx:if='{{item.status == "ALARM"}}'>暂停服务</text>
+			<text style="font-size:28rpx;line-height:28rpx;font-weight:bold;margin-left:20rpx;color:#FF773B;" wx:if='{{item.status == "OXYSUPPLY"}}'>仅取氧（暂无氧疗袋）</text>
+		</view>
+	</view>
+</view>

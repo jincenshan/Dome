@@ -1,0 +1,134 @@
+/* pages/member/index.wxss */
+.main{
+  width: 750rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  background-color: #f9f9f9;
+  height: 100%;
+}
+.hread{
+ width: 750rpx;
+ display: flex;
+ flex-direction: row;
+ justify-content: space-between;
+ align-items: center;
+ background-image: linear-gradient(90deg, #21F8C1 0%, #00AFBE 100%);
+ color: white;
+ position: fixed;
+ z-index: 2;
+ top:0;
+ left:0;
+}
+.hread_imamge{
+ width:50rpx;
+ height: 50rpx;
+ margin-left: 20rpx;
+}
+.member{
+  width: 750rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+.member_view{
+  width: 750rpx;
+  height: 420rpx;
+  display: flex;
+  flex-direction: row;
+  /* align-items: center; */
+  position: absolute;
+  z-index: 2;
+  left: 0;
+}
+.member_images{
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 50%;
+  margin-left: 40rpx;
+  margin-right: 40rpx;
+  margin-top: 60rpx;
+}
+.member_phone{
+  height: 40rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.member_text{
+  width: 70%;
+  height: 180rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 38rpx;
+  line-height: 36rpx;
+  font-weight: bold;
+  color: white;
+  margin-top: 60rpx;
+}
+.member_content{
+  width: auto;
+  height: 44rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.member_images_icon{
+  width: 160rpx;
+  height: 44rpx;
+}
+.member_tabbar{
+  width: 690rpx;
+  height: 140rpx;
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  border-radius: 20rpx;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  bottom: -20rpx;
+  box-shadow: 0px 1px 2px 1px rgba(161, 178, 201, 0.3);
+  z-index: 10;
+}
+.member_tabbar_content{
+  width: 33.33%;
+  height: 78rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 28rpx;
+  line-height: 28rpx;
+  font-weight: bold;
+}
+.list_content{
+  width: 690rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  border-radius: 20rpx;
+  box-shadow: 0px 1px 2px 1px rgba(161, 178, 201, 0.3);
+  margin-bottom: 20rpx;
+  margin-top: 60rpx;
+}
+.list_go{
+  width: 630rpx;
+  height: 120rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1rpx solid #f9f9f9;
+}
+.list_go_text{
+  width: 50%;
+  height: 48rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}

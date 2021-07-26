@@ -1,0 +1,12 @@
+<!--pages/login/code.wxml-->
+<view class="main">
+  <view class="conent">
+    <text style="margin-top:50rpx">请输入邀请码</text>
+    <input class="input_view" bindinput="inputCode" maxlength="6" value="{{code}}" placeholder="邀请人和您获得免费氧疗服务" placeholder-style="color:#7D7D7D;font-size:32rpx"></input>
+    <view class="line"></view>
+    <view class="content">
+      <view class="button_view" catchtap="goSubmit" style="margin-top:60rpx;color:white;background-color:#0080FF">确定</view>
+      <view class="button_view" catchtap="goHome" style="margin-top:30rpx;border:1rpx solid #D8D8E2">如无邀请码，直接跳过</view>
+    </view>
+  </view>
+</view>

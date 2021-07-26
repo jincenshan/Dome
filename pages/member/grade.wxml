@@ -1,0 +1,22 @@
+<!--pages/member/grade.wxml-->
+<view class="main">
+  <view class="content">
+    <image src="../../images/member-cj.png" class="content_images" wx:if="{{userInfo.level == 1}}"></image>
+    <image src="../../images/member-zj.png" class="content_images" wx:if="{{userInfo.level == 3}}"></image>
+    <image src="../../images/member-gj.png" class="content_images" wx:if="{{userInfo.level == 5}}"></image>
+    <view class="content_top">
+      <view class="content_top_left">
+        <text style="font-size:24rpx;line-height:24rpx;margin-bottom:40rpx"></text>
+      </view>
+      <view class="content_top_left" style="align-items: center">
+        <text style="font-size:80rpx;line-height:80rpx;margin-bottom:24rpx">{{invitationNumberSuccess}}</text>
+        <text style="font-size:24rpx;line-height:24rpx;font-weight:bold;margin-bottom:40rpx">成功邀请人数</text>
+      </view>
+    </view>
+    <view class="content_bottom">
+      <text>下个等级：{{nextLevel}}会员</text>
+      <text>还需邀请{{invitationNumberNeed}}人</text>
+    </view>
+  </view>
+  <image src="../../images/dhdjbg.png" style="width:690rpx;height:1028rpx;margin-top:30rpx;margin-bottom:40rpx"></image>
+</view>

@@ -1,0 +1,10 @@
+<!--pages/binding/message.wxml-->
+<view class="main">
+	<image src="../../images/oxygen-error.png" class="error_images"></image>
+	<text class="error_text">该氧疗袋不是属于您的氧疗袋</text>
+	<text class="error_text">请更换或购买氧疗袋后</text>
+	<text class="error_text">重新在氧疗机识别</text>
+	<text class="error_phone">氧疗袋SN：{{bagSn}}</text>
+	<text class="error_phone" style="margin-top: 30rpx;">所属帐号：{{userAccount}}</text>
+	<view class="error_home" catchtap="go_home">返回首页</view>
+</view>

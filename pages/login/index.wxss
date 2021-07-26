@@ -1,0 +1,41 @@
+/* pages/login/index.wxss */
+.main{
+  width: 750rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  background-color: #f9f9f9;
+  height: 100%;
+}
+.button_go{
+  width: 630rpx;
+  height: 80rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 30rpx;
+  line-height: 36rpx;
+  background-color: #3CCE88;
+  border-radius: 40rpx;
+  font-weight: bold;
+}
+.checkbox_view{
+  width: 630rpx;
+  height: 40rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 28rpx;
+  line-height: 28rpx;
+  color: #202020;
+  margin-bottom: 40rpx;
+}
+button::after {
+  border: none;
+  border-radius:0;
+  width: none;
+}
